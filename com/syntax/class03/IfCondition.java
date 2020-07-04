@@ -39,8 +39,12 @@ public class IfCondition {
 			
 			if (budget >= carPrice) {
 				System.out.println("I will buy this car");
+				System.out.println("I am happy");
 			} else {
 				System.out.println("I will not buy this car");
+				System.out.println("I will stuy Java");
+				System.out.println("I will find a job");
+				System.out.println("Then, I will have money");
 			}
 			
 	

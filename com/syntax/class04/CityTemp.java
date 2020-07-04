@@ -15,7 +15,7 @@ public class CityTemp {
 		String city = scan.nextLine();
 		System.out.println("Please enter your temperature in Fahrenheit:");
 		int tempF = scan.nextInt();
-		int tempC = (tempF) - 32 * 5/9;
+		int tempC = (tempF - 32) * 5/9;
 		
 		
 		
