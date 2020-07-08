@@ -1,28 +1,9 @@
 package com.syntax.repl2;
 
 public class test {
-	public static void main(String[] args) {
-		
-		
-		
-		
-		
-		int m=2, total=0;
-
-		while(m<6) {
-
-		   total=total+m;
-
-		   m++;
-
-		}
-
-		System.out.print(total);
-		
-		
-		
-		
-		
-		
-	}}
-	
+	  public static void main(String args[]) {
+		  String c = "Hello i love java";
+		  boolean var;
+		  var = c.startsWith("hello");
+		  System.out.println(var);
+		}}

@@ -7,7 +7,7 @@ public class StringMethods {
 			String name = "Olga"; //literal declaration
 			
 			//2nd way to create string
-			String name1 = new String();
+			String name1 = new String(); 
 			name1 = "Olga";
 			
 			System.out.println(name);
