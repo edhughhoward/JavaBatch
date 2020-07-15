@@ -1,22 +1,18 @@
 package com.syntax.class16;
 
 public class DifferentMethods {
-
 	// lets creat a method: "Hello" 10x
-
 	void sayHello(int times) {
 
 		for (int i = 0; i < times; i++) {
 			System.out.println("Hello");
 		}
 	}
-
 	void printAnyWord(String word, int times) {
 		for (int i = 0; i < times; i++) {
 			System.out.println(word);
 		}
 	}
-
 	void isHungry(boolean areYouHungry) {
 		if (areYouHungry) {
 			System.out.println("Please cook for yourself");

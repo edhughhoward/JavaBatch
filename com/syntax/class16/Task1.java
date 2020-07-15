@@ -3,6 +3,11 @@ package com.syntax.class16;
 public class Task1 {
 	public static void main (String [] args) {
 		
+		
+		
+		
+		
+		
 		// creat a string and based on teh length define whether string is long or short
 		// long if 10+
 		
