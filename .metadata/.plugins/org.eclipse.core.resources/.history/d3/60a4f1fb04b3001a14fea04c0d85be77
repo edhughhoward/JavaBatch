@@ -1,0 +1,23 @@
+package com.syntax.class10;
+
+import java.util.Scanner;
+
+public class Task1 {
+public static void main (String [] args) {
+	
+	Scanner scan = new Scanner(System.in);
+	
+	System.out.println("Please enter room number: ");
+	int room = scan.nextInt();
+	
+	System.out.println("Please enter a floor number:");
+	int floor = scan.nextInt();
+	
+	for (int i = 1; i <= room; i++) {}
+	System.out.println("Floor #" + i + " --->");
+		for (int k; k >= floor; j++) {
+			System.out.println(i + "." + k + " ");
+		}
+		System.out.println();
+}
+}

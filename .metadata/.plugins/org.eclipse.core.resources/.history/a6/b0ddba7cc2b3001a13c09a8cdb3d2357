@@ -1,0 +1,16 @@
+package com.syntax.repl;
+
+import java.util.Scanner;
+
+public class HW063 {
+	  public static void main(String[] args) {
+		    Scanner inp = new Scanner(System.in);
+		     int x = inp.nextInt();
+		    System.out.print("In:");
+
+		    
+		    
+		    
+inp.close();
+		  }
+		}

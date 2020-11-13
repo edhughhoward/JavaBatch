@@ -1,0 +1,18 @@
+package com.syntax.class11;
+
+public class TwoDArray {
+public static void main(String [] args) {
+	int[][] numbers = new int [3][4];
+	
+	System.out.println();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+}

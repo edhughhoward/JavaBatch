@@ -1,0 +1,25 @@
+package com.syntax.class11;
+
+public class RetrieveValues2DaArray {
+public static void main(String [] argsd) {
+	
+	String[] months = {
+			{"December", "January", "February"},
+			{"March", "April", "May"},
+			{"June", "July", "August"},
+			{"September", "October", "November"}
+	
+			};
+}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+}

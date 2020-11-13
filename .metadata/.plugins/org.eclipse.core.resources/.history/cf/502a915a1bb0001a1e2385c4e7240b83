@@ -1,0 +1,23 @@
+package com.syntax.reviewClass3;
+
+import java.util.Scanner;
+
+public class Test17 {
+public static void main(String [] args) {
+	// Print numbers from 1 to 100 in 1 line with space
+	
+	
+	
+	for (int num1= 1; num1 <= 100; num1++) {
+		System.out.print(num1 + " ");
+		
+	}
+System.out.println("=========================================");
+
+// Print numbers from 100 to 1
+
+for (int num2=100; num2 >=1; num2++) {
+	System.out.println(num2 + " ");
+}
+}
+}

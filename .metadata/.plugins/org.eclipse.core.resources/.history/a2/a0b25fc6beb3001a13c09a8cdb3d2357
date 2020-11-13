@@ -1,0 +1,14 @@
+package com.syntax.repl;
+
+public class HW061 {
+public static void main(String [] args) {
+	// Write a program that uses for loop to prints multiplication of  number 3 from 1 to 10
+	int j = 1;
+	for (int i = 3; i<=10; i++) {
+		System.out.println(i + " x " + j + " = " + (i*(j+1)));
+	}
+	
+	
+	
+}
+}

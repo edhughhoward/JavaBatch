@@ -1,0 +1,17 @@
+package com.syntax.class11;
+
+public class HomeworkReview {
+public static void main(String [] args) {
+	
+	int[] grades = new int[5];
+	grades[4] =90;
+
+
+	int size = grades.length;
+	System.out.println(size);
+	
+	
+	
+	
+}
+}

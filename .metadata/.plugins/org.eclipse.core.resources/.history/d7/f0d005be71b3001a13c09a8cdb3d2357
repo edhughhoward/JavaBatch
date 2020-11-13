@@ -1,0 +1,17 @@
+package com.syntax.repl;
+
+public class HW053 {
+public static void main(String [] args) {
+	
+	// Using do while loop print even numbers from 20 to 1
+	
+	
+	int i = 1;
+	
+	do {
+		System.out.println(i);
+		i++;
+	} while (i <=20 && i % 1==0);
+	
+}
+}

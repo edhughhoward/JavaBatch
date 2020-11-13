@@ -1,0 +1,24 @@
+package com.syntax.class10;
+
+public class Task03 {
+public static void main(String [] args) {
+	/*
+	 * Create an array of chars and store grades into it: A,B,C,D,E,F. 
+	 * Then print a grade B (use 2 different ways of creating an array).
+	 */
+	
+	char[] grades = {'A', 'B', 'C', 'D', 'E', 'F'};
+	
+	System.out.println(grades[1]);
+	System.out.println("========================================");
+	
+	char[] grades = new char [6];
+	char grades [0] = 'A';
+	char grades [1] = 'B';
+	char grades [2] = 'C';
+	char grades [3] = 'D';
+	char grades [4] = 'E';
+	char grades [5] = 'F';
+	
+}
+}

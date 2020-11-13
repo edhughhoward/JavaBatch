@@ -1,0 +1,24 @@
+package com.syntax.class01;
+
+public class PrimitiveDataTypes {
+	public static void main (String [] args) {
+		/* Primitive Data Types
+		 * byte
+		 * short
+		 * int
+		 * long
+		 * float
+		 * double
+		 * char
+		 * boolean
+		 */
+		
+		byte num = 10;
+		short num1 = 100;
+		int num2 = 1000;
+		long num3 = 10000777778888877777L;
+		
+		
+	}
+
+}

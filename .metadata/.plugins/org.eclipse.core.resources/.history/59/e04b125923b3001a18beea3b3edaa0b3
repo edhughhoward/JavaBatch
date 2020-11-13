@@ -1,0 +1,15 @@
+package com.syntax.class10;
+
+public class Array2 {
+public static void main(String [] args) {
+	
+	// Created array and stored the initial value
+	String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+	
+	System.out.println(weekdays [3]);
+	
+	
+	
+	
+}
+}

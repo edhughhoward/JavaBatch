@@ -1,0 +1,14 @@
+package com.syntax.class11;
+
+public class Brask01 {
+public static void main(String [] args) {
+	String[] cars = {"Honda", "Jetta", "BMW", "Ford", "Benz", "Cadillac", "Range"};
+	
+	
+	for (String elements:cars) {
+	System.out.println(elements);
+	}
+	
+	
+}
+}
