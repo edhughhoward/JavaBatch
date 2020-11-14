@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.hrms.testbase.BaseClass;
 
 public class AddEmployeePageElements extends BaseClass{
-	// all of the elements that we will need to access
+	
 	@FindBy(xpath = "//input[@id = 'firstName']")
 	public WebElement firstNameField;
 	
@@ -15,10 +15,7 @@ public class AddEmployeePageElements extends BaseClass{
 	public WebElement middleName;
 	
 	@FindBy(xpath = "//input[@id = 'lastName']")
-	public WebElement lastName;
-	
-	@FindBy(id = "employeeId")
-	public WebElement idField;
+	public WebElement lastNameField;
 	
 	@FindBy(xpath = "//input[@id = 'photofile']")
 	public WebElement chooseFile;
@@ -43,6 +40,9 @@ public class AddEmployeePageElements extends BaseClass{
 	
 	@FindBy(id = "re_password")
 	public WebElement confirmPassword;
+	
+	@FindBy(id = "employeeId")
+	public WebElement idField;
 	
 	public AddEmployeePageElements() {
 		PageFactory.initElements(driver, this);

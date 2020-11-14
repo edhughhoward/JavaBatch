@@ -33,4 +33,7 @@
 			<item value=""/>
 		</list>
 	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="C:\Users\edhug\eclipse-workspace\CucumberFramework"/>
+	</section>
 </section>

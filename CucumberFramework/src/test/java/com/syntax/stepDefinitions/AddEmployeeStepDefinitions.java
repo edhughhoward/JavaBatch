@@ -21,11 +21,11 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 
 	}
 
-	@Then("enter first and last name")
-	public void enter_first_and_last_name() {
-		sendText(addEmp.firstNameField, "John");
-		sendText(addEmp.lastName, "Wick");
-	}
+	/*
+	 * // @Then("enter first and last name") public void enter_first_and_last_name()
+	 * { sendText(addEmp.firstNameField, "John"); sendText(addEmp.lastName, "Wick");
+	 * }
+	 */
 
 	@Then("click on save Button")
 	public void click_on_save_Button() {
@@ -38,27 +38,29 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 		Assert.assertEquals("John Wick", profileName);
 	}
 
-	@When("Enter first name {string} middle name {string} and last name {string}")
-	public void enter_first_name_middle_name_and_last_name(String firstName, String middleName, String lastName) {
-		sendText(addEmp.firstNameField, firstName);
-		sendText(addEmp.middleName, middleName);
-		sendText(addEmp.lastName, lastName);
-
-	}
-
+	/*
+	 * @When("Enter first name {string} middle name {string} and last name {string}"
+	 * ) public void enter_first_name_middle_name_and_last_name(String firstName,
+	 * String middleName, String lastName) { sendText(addEmp.firstNameField,
+	 * firstName); sendText(addEmp.middleName, middleName);
+	 * sendText(addEmp.lastName, lastName);
+	 * 
+	 * }
+	 */
 	@Then("verify that {string} is added successfully")
 	public void verify_that_is_added_successfully(String fullName) {
 		String profileName = persDetails.profileName.getText();
 		Assert.assertEquals(fullName, profileName);
 	}
 
-	@When("enter employee {string}, {string}, {string}")
-	public void enter_employee(String firstName, String middleName, String lastName) {
-		sendText(addEmp.firstNameField, firstName);
-		sendText(addEmp.middleName, middleName);
-		sendText(addEmp.lastName, lastName);
-
-	}
+	/*
+	 * @When("enter employee {string}, {string}, {string}") public void
+	 * enter_employee(String firstName, String middleName, String lastName) {
+	 * sendText(addEmp.firstNameField, firstName); sendText(addEmp.middleName,
+	 * middleName); sendText(addEmp.lastName, lastName);
+	 * 
+	 * }
+	 */
 
 	@Then("verify that {string}, {string}, {string} is successfully added")
 	public void verify_that_is_successfully_added(String firstName, String middleName, String lastName) {
@@ -79,7 +81,7 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 
 			sendText(addEmp.firstNameField, firstName);
 			sendText(addEmp.middleName, middleName);
-			sendText(addEmp.lastName, lastName);
+	//		sendText(addEmp.lastName, lastName);
 			sendText(addEmp.idField, empId);
 
 			click(addEmp.saveButton);
@@ -105,7 +107,7 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 			
 			sendText(addEmp.firstNameField, firstName);
 			sendText(addEmp.middleName, middleName);
-			sendText(addEmp.lastName, lastName);
+		//	sendText(addEmp.lastName, lastName);
 			sendText(addEmp.idField, empId);
 
 			click(addEmp.saveButton);

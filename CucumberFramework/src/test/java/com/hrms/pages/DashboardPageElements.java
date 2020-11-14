@@ -34,12 +34,11 @@ public class DashboardPageElements extends BaseClass {
 	@FindBy(css = "a#welcome")
 	public WebElement welcome;
 	
-	@FindBy(id = "menu_pim_addEmployee")
+	@FindBy(xpath = "//a[text() = 'Add Employee']")
 	public WebElement addEmpBtn;
 	
-	@FindBy(xpath = "//div[@class = 'menu']/ul/ui")
+	@FindBy(xpath = "//div[@class = 'menu']/ul/li")
 	public List<WebElement> dashTabs;
-	
 
 
 	public DashboardPageElements() {

@@ -95,45 +95,66 @@ public class CommonMethods extends PageInitializer {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
+
 		File src = ts.getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(src, new File(Constants.SCREENSHOT_FILEPATH + fileName + getTimeStamp() + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		return bytes;
+
 	}
 
+	/**
+	 * This method will generate timeStamp
+	 * 
+	 * @return
+	 */
 	public static String getTimeStamp() {
+
 		Date date = new Date();
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd_HH_mm_ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH_mm_ss");
+
 		return sdf.format(date);
 	}
 
+	/**
+	 * this method will click on checkbox or radio button by the given list of
+	 * webelements and the value
+	 * 
+	 * @param radioOrCheckBoxes
+	 * @param value
+	 */
 	public static void clickRadioOrCheckBox(List<WebElement> radioOrCheckBoxes, String value) {
 		String actualValue;
-		for (WebElement radioORCheckBox : radioOrCheckBoxes) {
-			actualValue = radioORCheckBox.getAttribute("value").trim();
-			if (radioORCheckBox.isEnabled() && actualValue.equals(value)) {
-				jsClick(radioORCheckBox);
+		for (WebElement radioOrCheckbox : radioOrCheckBoxes) {
+			actualValue = radioOrCheckbox.getAttribute("value").trim();
+			if (radioOrCheckbox.isEnabled() && actualValue.equals(value)) {
+				jsClick(radioOrCheckbox);
 				break;
 			}
-
 		}
-
 	}
 
-	public static void selectDDValue(WebElement dd, String visableTextOrValue) {
+	/**
+	 * this method will select an option from the dropdown by the given webelement
+	 * and visible text value
+	 * 
+	 * @param dd
+	 * @param visibleTextOrValue
+	 */
+	public static void selectDDValue(WebElement dd, String visibleTextOrValue) {
 		try {
 			Select select = new Select(dd);
 			List<WebElement> options = select.getOptions();
 			for (WebElement option : options) {
-				if (option.getText().equals(visableTextOrValue)) {
-					select.selectByVisibleText(visableTextOrValue);
+				if (option.getText().equals(visibleTextOrValue)) {
+					select.selectByVisibleText(visibleTextOrValue);
 					break;
 				}
-
 			}
 		} catch (UnexpectedTagNameException e) {
 			e.printStackTrace();
@@ -141,6 +162,33 @@ public class CommonMethods extends PageInitializer {
 
 	}
 
+	/**
+	 * this method will select an option from the dropdown by the given webelement
+	 * and index
+	 * 
+	 * @param dd
+	 * @param visibleTextOrValue
+	 */
+	public static void selectDDValue(WebElement dd, int index) {
+		try {
+			Select select = new Select(dd);
+			List<WebElement> options = select.getOptions();
+
+			int size = options.size();
+
+			if (size > index) {
+				select.selectByIndex(index);
+			}
+		} catch (UnexpectedTagNameException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * this method will switch to a frame by the given frame weblement
+	 * 
+	 * @param iFrame
+	 */
 	public static void switchToFrame(WebElement iFrame) {
 		try {
 			driver.switchTo().frame(iFrame);
@@ -149,14 +197,12 @@ public class CommonMethods extends PageInitializer {
 		}
 
 	}
-	public static void switchToFrame(String nameOrId) {
-		try {
-			driver.switchTo().frame(nameOrId);
-		} catch (NoSuchFrameException e) {
-			e.printStackTrace();
-		}
 
-	}
+	/**
+	 * this method will switch to a frame by the given frame index
+	 * 
+	 * @param frameIndex
+	 */
 	public static void switchToFrame(int frameIndex) {
 		try {
 			driver.switchTo().frame(frameIndex);
@@ -165,20 +211,37 @@ public class CommonMethods extends PageInitializer {
 		}
 
 	}
-	
+
+	/**
+	 * this method will switch to a frame by the given frame nameOrId
+	 * 
+	 * @param nameOrId
+	 */
+	public static void switchToFrame(String nameOrId) {
+		try {
+			driver.switchTo().frame(nameOrId);
+		} catch (NoSuchFrameException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * this method will switch to a child window
+	 */
 	public static void switchToChildWindow() {
 		String mainWindow = driver.getWindowHandle();
 		Set<String> allWindows = driver.getWindowHandles();
-		
 		for (String window : allWindows) {
-			if(!window.equals(mainWindow)) {
+			if (!window.equals(mainWindow)) {
 				driver.switchTo().window(window);
 				break;
 			}
 		}
 	}
-	
+
 	static String jsonFile;
+
 	public static String readJson(String fileName) {
 		try {
 			jsonFile = new String(Files.readAllBytes(Paths.get(fileName)));
@@ -186,20 +249,6 @@ public class CommonMethods extends PageInitializer {
 			e.printStackTrace();
 		}
 		return jsonFile;
-	}
-	/**
-	 * 
-	 * @param dd
-	 * @param index
-	 */
-	public static void selectDDValue(WebElement dd, int index) {
-		Select select = new Select(dd);
-		List<WebElement> options = select.getOptions();
-		int size = options.size();
-
-		if (size > index) {
-			select.selectByIndex(index);
-		}
 	}
 
 }

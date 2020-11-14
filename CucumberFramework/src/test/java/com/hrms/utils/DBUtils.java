@@ -12,51 +12,55 @@ import java.util.List;
 import java.util.Map;
 
 public class DBUtils {
-public static Connection conn;
-public static Statement st;
-public static ResultSet rs;
-public static List<Map<String, String>> listData;
-
-/**
- * This method will get connected to the DataBase
- */
+	
+	public static Connection conn;
+	public static Statement st;
+	public static ResultSet rs;
+	public static List<Map<String, String>> listData;
+	
+	/**
+	 * this method will get connected to the DB
+	 */
 	public static void getConnected() {
 		try {
-			conn = DriverManager.getConnection(ConfigsReader.getPropValue("dbUrl"),
+			 conn = DriverManager.getConnection(ConfigsReader.getPropValue("dbUrl"),
 					ConfigsReader.getPropValue("dbUsername"), ConfigsReader.getPropValue("dbPassword"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	/** 
-	 * This Method will execute the query and store the data inside the list of maps
+	
+	/**
+	 * this method will execute the query and store the data inside the list of maps
 	 * @param sqlQuery
-	 * @return List<Map<String, String>>
+	 * @return <-- List<Map<String, String>>
 	 */
-	public static List<Map<String, String>> storeDataFromDB(String sqlQuery){
+	public static List<Map<String, String>> storeDataFromDB(String sqlQuery) {
 		getConnected();
-		
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery(sqlQuery);
 			ResultSetMetaData rsMetaData = rs.getMetaData();
-			 listData = new ArrayList<>();
-			 
-			 while(rs.next()) {
-				 Map<String, String> mapData = new LinkedHashMap<>();
-				 for(int i = 1; i <= rsMetaData.getColumnCount(); i++) {
-					 mapData.put(rsMetaData.getColumnName(i), rs.getObject(i).toString());
-				 }
-				 listData.add(mapData);
-			 }
+			listData = new ArrayList<>();
+			
+			while(rs.next()) {
+				Map<String, String> mapData = new LinkedHashMap<>();
+				for(int i = 1; i <= rsMetaData.getColumnCount(); i++) {
+					mapData.put(rsMetaData.getColumnName(i), rs.getObject(i).toString());
+				}
+				listData.add(mapData);
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 		return listData;
+		
 	}
-	/** 
-	 * This method will close the whole DataBase connection
+	
+	/**
+	 * this method will close the whole DB connection 
 	 */
 	public static void closeConnection() {
 		try {
@@ -66,13 +70,14 @@ public static List<Map<String, String>> listData;
 			if(st != null) {
 				st.close();
 			}
-			if(st != null) {
+			if(conn != null) {
 				conn.close();
 			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		
 	}
+
 }
